@@ -9,70 +9,101 @@
     <title>QR Code Generator | Modern & Elegant</title>
 </head>
 <body>
+    <!-- Animated Background -->
     <div class="background-animation">
         <div class="circle circle-1"></div>
         <div class="circle circle-2"></div>
         <div class="circle circle-3"></div>
+        <div class="circle circle-4"></div>
+        <div class="circle circle-5"></div>
     </div>
 
+    <!-- Main Container -->
     <div class="container">
+        <!-- Main Card Box -->
         <div class="box">
-            <div class="qr-header">
-                <div class="icon-wrapper">
-                    <i class="fas fa-qrcode"></i>
+            <!-- Left Section: Controls -->
+            <div class="left-section">
+                <!-- Header -->
+                <div class="qr-header">
+                    <div class="icon-wrapper">
+                        <i class="fas fa-qrcode"></i>
+                    </div>
+                    <h1>QR Generator</h1>
+                    <p class="subtitle">Create stunning QR codes instantly</p>
                 </div>
-                <h1>QR Code Generator</h1>
-                <p class="subtitle">Create stunning QR codes instantly</p>
                 
-                <div class="input-group">
-                    <i class="fas fa-link input-icon"></i>
-                    <input type="text" placeholder="Enter your text or URL" id="qr-text" autocomplete="off">
-                </div>
-                
-                <div class="size-selector">
-                    <label for="sizes">
-                        <i class="fas fa-expand-arrows-alt"></i>
-                        Size
-                    </label>
-                    <select id="sizes">
-                        <option value="100">100x100</option>
-                        <option value="200">200x200</option>
-                        <option value="300" selected>300x300</option>
-                        <option value="400">400x400</option>
-                        <option value="500">500x500</option>
-                        <option value="600">600x600</option>
-                        <option value="700">700x700</option>
-                        <option value="800">800x800</option>
-                        <option value="900">900x900</option>
-                        <option value="1000">1000x1000</option>
-                    </select>
+                <!-- Controls Area -->
+                <div class="controls">
+                    <!-- Input Field -->
+                    <div class="input-group">
+                        <i class="fas fa-link input-icon"></i>
+                        <input type="text" placeholder="Enter your text or URL" id="qr-text" autocomplete="off">
+                        <div class="input-border"></div>
+                    </div>
+                    
+                    <!-- Size Selector -->
+                    <div class="size-selector">
+                        <label for="sizes">
+                            <i class="fas fa-expand-arrows-alt"></i>
+                            Size
+                        </label>
+                        <select id="sizes">
+                            <option value="100">100x100</option>
+                            <option value="200">200x200</option>
+                            <option value="300" selected>300x300</option>
+                            <option value="400">400x400</option>
+                            <option value="500">500x500</option>
+                            <option value="600">600x600</option>
+                            <option value="700">700x700</option>
+                            <option value="800">800x800</option>
+                            <option value="900">900x900</option>
+                            <option value="1000">1000x1000</option>
+                        </select>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="qr-footer">
+                        <button id="generateBtn" class="btn btn-generate">
+                            <span class="btn-content">
+                                <i class="fas fa-magic"></i>
+                                Generate
+                            </span>
+                            <span class="btn-shimmer"></span>
+                        </button>
+                        <a href="#" id="downloadBtn" class="btn btn-download" download="QR_Code.png">
+                            <span class="btn-content">
+                                <i class="fas fa-download"></i>
+                                Download
+                            </span>
+                            <span class="btn-shimmer"></span>
+                        </a>
+                    </div>
                 </div>
             </div>
 
-            <div class="qr-body">
-                <div class="qr-placeholder">
-                    <i class="fas fa-qrcode placeholder-icon"></i>
-                    <p>Your QR code will appear here</p>
+            <!-- Right Section: QR Code Display -->
+            <div class="right-section">
+                <div class="qr-body">
+                    <div class="qr-placeholder">
+                        <i class="fas fa-qrcode placeholder-icon"></i>
+                        <p>Your QR code will appear here</p>
+                    </div>
                 </div>
-            </div>
-
-            <div class="qr-footer">
-                <button id="generateBtn" class="btn btn-generate">
-                    <i class="fas fa-magic"></i>
-                    Generate
-                </button>
-                <a href="#" id="downloadBtn" class="btn btn-download" download="QR_Code.png">
-                    <i class="fas fa-download"></i>
-                    Download
-                </a>
             </div>
         </div>
 
+        <!-- Footer -->
         <footer class="app-footer">
-            <p>Made with <i class="fas fa-heart"></i> by Code Traversal</p>
+            <p>Made with <i class="fas fa-heart"></i> by AzhaanGlitch</p>
+            <div class="footer-links">
+                <a href="https://github.com/AzhaanGlitch" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/azhaanalisiddiqui/" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            </div>
         </footer>
     </div>
 
+    <!-- External Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
     <script src="script.js"></script>
 </body>
