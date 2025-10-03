@@ -31,8 +31,7 @@ qrText.addEventListener('keypress', (e) => {
 });
 
 downloadBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    handleDownload();
+    handleDownload(e);
 });
 
 // Functions
@@ -72,7 +71,7 @@ function generateQRCode() {
     }, 100);
 }
 
-function handleDownload() {
+function handleDownload(e) {
     const img = qrContainer.querySelector('img');
     const canvas = qrContainer.querySelector('canvas');
     
@@ -81,9 +80,11 @@ function handleDownload() {
         downloadBtn.setAttribute("href", imgAttr);
         showNotification('Downloading QR Code...', 'success');
     } else if (canvas !== null) {
-        downloadBtn.setAttribute("href", canvas.toDataURL());
+        const dataURL = canvas.toDataURL('image/png');
+        downloadBtn.setAttribute("href", dataURL);
         showNotification('Downloading QR Code...', 'success');
     } else {
+        e.preventDefault();
         showNotification('Please generate a QR code first', 'error');
         downloadBtn.removeAttribute("href");
     }
@@ -193,3 +194,4 @@ qrText.addEventListener('input', function() {
 window.addEventListener('load', () => {
     qrText.focus();
 });
+
